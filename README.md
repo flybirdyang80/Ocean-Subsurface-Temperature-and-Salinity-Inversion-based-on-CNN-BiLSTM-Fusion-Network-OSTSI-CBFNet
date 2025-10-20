@@ -26,4 +26,5 @@ Ocean Subsurface Temperature and Salinity Inversion based on CNN-BiLSTM Fusion N
 
 创新：首次CNN-BiLSTM+双注意力用于温盐反演；引入次表层近似变量AST/ASS增强垂向约束，无需额外观测即提升了50–200 m的反演精度。
 结果：2021全年15层平均R²=0.985，RMSE≤0.394 ℃/0.052 psu，优于CNN、BiLSTM、CNN-CBAM、Transformer、MTSAN等模型，且时空-垂向误差稳定。
-发表文章：Mu J, Yang J, Wang C, et al. OSTSI-CBFNet: ocean subsurface temperature and salinity inversion based on CNN-BiLSTM fusion network with attention mechanism[J]. Journal of Applied Remote Sensing, 2024, 18(3): 038507-038507.
+
+**发表文章：Mu J, Yang J, Wang C, et al. OSTSI-CBFNet: ocean subsurface temperature and salinity inversion based on CNN-BiLSTM fusion network with attention mechanism[J]. Journal of Applied Remote Sensing, 2024, 18(3): 038507-038507. https://doi.org/10.1117/1.JRS.18.038507**
