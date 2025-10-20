@@ -6,17 +6,17 @@ Ocean Subsurface Temperature and Salinity Inversion based on CNN-BiLSTM Fusion N
 
 数据：
 
-	变量	   来源	    空间分辨率	    时间分辨率	
+	变量	  来源	     空间分辨率	  时间分辨率	
 	
-	SSH	    AVISO      	0.25°       	日	
+	SSH	      AVISO        0.25°       	日	
 	
-	SSS	  SMAP/SMOS 	  0.125°     	日/月	
+	SSS	    SMAP/SMOS 	  0.125°     	日/月	
 	
-	SST	  UKMO OSTIA	  0.05°	        日	
+	SST	    UKMO OSTIA	  0.05°	        日	
 	
-	SSW     CCMP 	      0.125°	     6 h/月	
+	SSW        CCMP       0.125°	   6 h/月	
 	
-3D T/S  	CMEMS     GLORYS12V1	  0.25°	月	
+	3D T/S   GLORYS12V1	  0.25°			月	
 
 数据预处理：裁剪北太平洋区域，双线性重采样到0.25°，统一时间分辨率为月均。无效网格点剔除；进行标准化。SST/SSS减去不同深度层的10年平均值差值(SST/SSS-avg[Sdepths=i/Tdepths=i])，生成次表层近似AST/ASS。3D T/S选15层（30–1000 m）。
 2011-2020年的数据作为训练集和验证集（随机选取30%作为验证集，70%作为训练集），2021年的数据作为测试集。
