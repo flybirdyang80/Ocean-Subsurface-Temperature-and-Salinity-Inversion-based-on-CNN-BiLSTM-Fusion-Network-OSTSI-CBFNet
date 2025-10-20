@@ -3,6 +3,7 @@ Ocean Subsurface Temperature and Salinity Inversion based on CNN-BiLSTM Fusion N
 
 本项目提出了一种OSTSI-CBFNet模型，融合CNN-BiLSTM与双注意力机制，仅用海面遥感数据即可高精度反演北太平洋30–1000 m共15层的温盐场。项目模型训练代码已开源，欢迎复用与改进。
 研究区域：北太平洋（120°E–90°W，0–60°N）。
+
 数据：
 	变量	   来源	    空间分辨率	    时间分辨率	
 	SSH	    AVISO      	0.25°       	日	
@@ -10,6 +11,7 @@ Ocean Subsurface Temperature and Salinity Inversion based on CNN-BiLSTM Fusion N
 	SST	  UKMO OSTIA	  0.05°	        日	
 	SSW     CCMP 	      0.125°	     6 h/月	
 3D T/S  	CMEMS     GLORYS12V1	  0.25°	月	
+
 数据预处理：裁剪北太平洋区域，双线性重采样到0.25°，统一时间分辨率为月均。无效网格点剔除；进行标准化。SST/SSS减去不同深度层的10年平均值差值(SST/SSS-avg[Sdepths=i/Tdepths=i])，生成次表层近似AST/ASS。3D T/S选15层（30–1000 m）。
 2011-2020年的数据作为训练集和验证集（随机选取30%作为验证集，70%作为训练集），2021年的数据作为测试集。
 模型：模型设计了时空双分支，CNN-CBAM提取11×11窗口的空间特征，BiLSTM-Attention提取前10个月的时间特征，融合后输出当前月份的温盐反演结果。
